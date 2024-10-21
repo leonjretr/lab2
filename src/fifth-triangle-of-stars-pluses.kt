@@ -1,30 +1,15 @@
 fun main() {
-    val N = readLine()!!.toInt()
+    val n = readLine()!!.toInt()
 
-    var plusCount = 1
-
-    for (i in 0 until N) {
-        print(" ")
-    }
-    println(" *")
-    for (rows in 1 until N) {
-        for (spaces in 0 until N - rows - 1) {
-            print(" ")
-        }
-        if (rows != N - 1) {
-            print(" *")
-            for (pluses in 0 until plusCount) {
-                print(" +")
-                plusCount += 2
-            }
-            print(" *")
-        }
-        if (rows == N - 1) {
-            for (base in 0 until N * 2 - 1) {
+    for (i in 1..(2 * n - 1)) {
+        print("*")
+        for (j in (Math.abs(n - i) + 2)..n) {
+            if (j == n)
                 print(" *")
-            }
+            else
+                print(" +")
         }
         println()
     }
-    //println() // End with a new line after printing the base
 }
+
